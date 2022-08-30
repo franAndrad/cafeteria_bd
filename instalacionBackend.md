@@ -25,3 +25,12 @@ Luego en el script modificamos en el package.json el start
     },
 }
 ```
+Para que espere peticiones lo hacemos con express, creamos en index.js
+
+```
+const app = express();
+app.set('port', process.env.PORT || 4000);
+app.listen(app.get('port'), ()=>{
+    console.log(`Estamos en el puerto ${app.get('port')}`);
+})
+```
