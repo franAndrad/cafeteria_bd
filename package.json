@@ -4,7 +4,8 @@
   "description": "primera practica de backend para el proyecto de la cafeteria",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "babel-node index.js",
+    "dev": "nodemon --exec babel-node"
   },
   "keywords": [],
   "author": "Francisco Andrade",
