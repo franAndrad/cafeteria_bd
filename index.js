@@ -11,3 +11,13 @@ app.set('port', process.env.PORT || 4000);
 app.listen(app.get('port'), ()=>{
     console.log(`Mi backend esta en el puerto ${app.get('port')}`);
 })
+
+// middleware
+
+// rutas
+app.get('/',(req, res)=>{
+    res.send('primera peticion get');
+});
+app.get('/prueba',(req, res)=>{
+    res.send('otra peticion get');
+});
