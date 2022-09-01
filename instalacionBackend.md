@@ -60,3 +60,9 @@ Cors muestra peticiones externas, no locales
 ```
 $ npm i cors
 ```
+
+
+## Intermediario entre js y mongo
+```
+$ npm install mongoose --save
+```
