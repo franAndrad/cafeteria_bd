@@ -3,6 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors"
 import "./src/database"
+import router from "./src/routes/productos.routes";
 
 // instancia de express
 const app = express();
@@ -23,11 +24,5 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 // cargar un archivo estatico
 app.use(express.static("./public"));
-
 // rutas
-app.get('/',(req, res)=>{
-    res.send('primera peticion get');
-});
-app.get('/prueba',(req, res)=>{
-    res.send('otra peticion get');
-});
+app.use('/apicafe', router);
