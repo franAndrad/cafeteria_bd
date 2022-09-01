@@ -1,5 +1,7 @@
 // const express = require('express');
 import express from "express";
+import morgan from "morgan";
+import cors from "cors"
 
 // instancia de express
 const app = express();
@@ -12,7 +14,14 @@ app.listen(app.get('port'), ()=>{
     console.log(`Mi backend esta en el puerto ${app.get('port')}`);
 })
 
-// middleware
+// middlewares
+app.use(morgan('dev')); //da informacion peticiones y respuestas en terminal
+app.use(cors()); //permite recibir peticiones remotas
+// los dos middlewares debajo sirven para procesar un objeto json
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+// cargar un archivo estatico
+app.use(express.static("./public"));
 
 // rutas
 app.get('/',(req, res)=>{

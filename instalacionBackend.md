@@ -1,3 +1,5 @@
+## Instalaciones
+
 Crear una carpeta y poner el codigo
 ```
 $ npm init -y
@@ -46,4 +48,15 @@ Agregamos al script
     "start": "babel-node index.js",
     "dev": "nodemon --exxec babel-node"
   }
+```
+
+## Middlewares
+
+Morgan nos da informacion en la terminal de las peticiones y respuestas
+```
+$ npm i morgan
+```
+Cors muestra peticiones externas, no locales
+```
+$ npm i cors
 ```
