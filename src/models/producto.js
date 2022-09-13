@@ -23,7 +23,7 @@ const productoSchema = new Schema({
         type: Number,
         required: true,
         min: 0,
-        max: 9999
+        max: 9000
     },
     categoria:{
         type: String,

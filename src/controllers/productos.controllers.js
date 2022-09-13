@@ -1,4 +1,5 @@
 import Producto from "../models/producto";
+import { validationResult } from "express-validator/src/validation-result";
 
 export const crearProducto = async (req, res) => {
     try {
@@ -6,6 +7,14 @@ export const crearProducto = async (req, res) => {
         // solo podemos tener un res
 
         //validacion
+        const errors = validationResult(req)
+        if(!errors.isEmpty()){
+            return res.status(400).json({
+                errors: errors.array()
+                // si pongo errors.mapped() me devuelve el primer error que encuentra
+            })
+        }
+
         // crear un objetio para guardar en la BD
         const productoNuevo = new Producto({
             nombreProducto: req.body.nombreProducto,

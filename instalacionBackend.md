@@ -66,3 +66,20 @@ $ npm i cors
 ```
 $ npm install mongoose --save
 ```
+
+Despues de que todo funcione bien para hacer validaciones usamos
+
+##Validaciones
+```
+$ npm install --save express-validator
+```
+lo usamos de forma
+```
+import { check } from 'express-validator';
+
+router
+    .route('/productos')
+    .get(listarProductos)
+    .post([check],crearProducto);   <---
+
+```
