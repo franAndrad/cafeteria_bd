@@ -4,7 +4,7 @@ export const crearProducto = async (req, res) => {
     try {
         console.log(req.body);
         // solo podemos tener un res
-        
+
         //validacion
         // crear un objetio para guardar en la BD
         const productoNuevo = new Producto({
@@ -32,14 +32,43 @@ export const crearProducto = async (req, res) => {
     }
 }
 
-export const listarProductos = (req, res) => {
-    res.send('enviar lista de productos');
+export const listarProductos = async (req, res) => {
+    try {
+        // buscar en la BD la collection de productos
+        const arregloProductos = await Producto.find();
+        // enviar la respuesta
+        res.status(200).json(arregloProductos);
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'Error al buscar los productos'
+        })
+    }
 }
-export const obtenerProducto = (req, res) => {
-    res.send('recibit un producto');
+
+export const obtenerProducto = async (req, res) => {
+    try {
+        // buscar en la BD la collection de productos
+        const arregloProductos = await Producto.findById(req.params.id);
+        // enviar la respuesta
+        res.status(200).json(arregloProductos);
+    } catch (error) {
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'Error al buscar los productos'
+        })
+    }
 }
+
 export const editarProducto = (req, res) => {
-    res.send('editar un producto');
+    try {
+        
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje: 'Error al intentar borrar el producto'
+        })
+    }
 }
 export const eliminarProducto = (req, res) => {
     res.send('eliminar un producto');
