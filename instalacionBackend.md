@@ -83,3 +83,29 @@ router
     .post([check],crearProducto);   <---
 
 ```
+
+#Cargar la bd en vercel
+
+Para vercel agregamos un archivo de configuracion vercel.json
+```
+{
+    "version":2,
+    "builds":[
+        {
+            "src":"./index.js",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest": "/"
+        }
+    ]
+}
+```
+
+tambien agregamos en el package.json debajo de main
+```
+  "engines": {"node": "16.x"},
+```
