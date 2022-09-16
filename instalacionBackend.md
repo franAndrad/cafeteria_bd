@@ -109,3 +109,16 @@ tambien agregamos en el package.json debajo de main
 ```
   "engines": {"node": "16.x"},
 ```
+
+#Variables de entorno
+
+Instalamos el paquete
+```
+npm install dotenv
+```
+creamos el documento .env
+
+importamos env donde lo tengamos que usar
+```
+require('dotenv').config()
+```

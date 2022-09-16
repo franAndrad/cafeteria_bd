@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-require('dotenv').config()
+ require('dotenv').config()
 
 // const url = 'mongodb://localhost:27017/cafeteria'; // base de dato local
 const url = process.env.SERVIDOR // base de dato en la nube
