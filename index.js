@@ -5,6 +5,7 @@ import cors from "cors"
 import "./src/database"
 import router from "./src/routes/productos.routes";
 import path from "path";
+import auth from "./src/routes/usuarios.routes"
 
 // instancia de express
 const app = express();
@@ -27,3 +28,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'public')));
 // rutas
 app.use('/apicafe', router);
+app.use('/auth', auth);

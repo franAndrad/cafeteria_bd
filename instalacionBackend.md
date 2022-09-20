@@ -32,6 +32,8 @@ Luego en el script modificamos en el package.json el start
 Para que espere peticiones lo hacemos con express, creamos en index.js
 
 ```
+import express from "express"
+
 const app = express();
 app.set('port', process.env.PORT || 4000);
 app.listen(app.get('port'), ()=>{
@@ -46,7 +48,7 @@ Agregamos al script
 ```
  "scripts": {
     "start": "babel-node index.js",
-    "dev": "nodemon --exxec babel-node"
+    "dev": "nodemon --exec babel-node index.js"
   }
 ```
 
