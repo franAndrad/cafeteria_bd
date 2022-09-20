@@ -1,4 +1,4 @@
-import mongoose, {mongo, Schema} from "mongoose";
+import mongoose, { Schema} from "mongoose";
 
 const usuarioSchema = new Schema({
     nombre:{
@@ -12,7 +12,7 @@ const usuarioSchema = new Schema({
         unique: true,
         required: true
     },
-    contraseña:{
+    password:{
         type: 'String',
         required: true
     }

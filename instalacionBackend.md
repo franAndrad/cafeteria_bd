@@ -124,3 +124,8 @@ importamos env donde lo tengamos que usar
 ```
 require('dotenv').config()
 ```
+
+#Usamos bicript para encriptar datos
+```
+$ npm i bcryptjs
+```
