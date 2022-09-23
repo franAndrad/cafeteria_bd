@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { crearProducto, editarProducto, eliminarProducto, listarProductos, obtenerProducto } from '../controllers/productos.controllers';
 import validacionProducto from '../helpers/validacionProducto,';
+import validarJWT from '../helpers/validar-jwt';
 
 const router = Router();
 
@@ -10,12 +11,12 @@ const router = Router();
 router
     .route('/productos')
     .get(listarProductos)
-    .post(validacionProducto, crearProducto);
+    .post([validarJWT,validacionProducto], crearProducto);
 router
     .route('/productos/:id')
     .get(obtenerProducto)
-    .put(validacionProducto,editarProducto)
-    .delete(eliminarProducto);
+    .put(validarJWT, validacionProducto,editarProducto)
+    .delete(validarJWT, eliminarProducto);
 
 export default router;
 

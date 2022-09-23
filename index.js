@@ -6,6 +6,7 @@ import "./src/database"
 import router from "./src/routes/productos.routes";
 import path from "path";
 import auth from "./src/routes/usuarios.routes"
+import * as detoenv from 'dotenv'
 
 // instancia de express
 const app = express();
@@ -19,6 +20,7 @@ app.listen(app.get('port'), () => {
 })
 
 // middlewares
+detoenv.config();
 app.use(morgan('dev')); //da informacion peticiones y respuestas en terminal
 app.use(cors()); //permite recibir peticiones remotas
 // los dos middlewares debajo sirven para procesar un objeto json

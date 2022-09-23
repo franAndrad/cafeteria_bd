@@ -129,3 +129,8 @@ require('dotenv').config()
 ```
 $ npm i bcryptjs
 ```
+
+#Usamos jsonwebtoken
+```
+$ npm i jsonwebtoken
+```
